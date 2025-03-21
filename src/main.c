@@ -1,8 +1,7 @@
-#include "main.h" // include dependencies
-#include "init.h" // include init()
-#include "run.h" // include run()
-#include "cleanup.h" // include cleanup()
-
-int main() {// start the program
-    while(y = x[y]()); // start by initialising with the init(), then run on repeat with run() and finish the program by returning cleanup()
+#include "main.h"
+#include "init.h"
+#include "run.h"
+#include "cleanup.h"
+int main() {
+    {int y=0;while(y = (int (*[3])()){init,run,cleanup}[y]());}
 }

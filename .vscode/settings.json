@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "gen.h": "c"
+        "gen.h": "c",
+        "cleanup.h": "c"
     }
 }

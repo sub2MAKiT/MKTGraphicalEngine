@@ -35,6 +35,3 @@ int init() {
 
     return 1;
 }
-
-int (*x[3])() = {init,run,cleanup};
-int y = 0;

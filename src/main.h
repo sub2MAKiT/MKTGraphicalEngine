@@ -12,7 +12,3 @@
 extern GLFWwindow* window;
 
 extern GLuint shader;
-
-extern int (*x[3])();
-
-extern int y;
