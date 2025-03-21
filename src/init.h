@@ -1,4 +1,4 @@
 #pragma once
 
 // functions
-void init();
+int init();

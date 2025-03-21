@@ -1,5 +1,6 @@
 #include "run.h"
 #include "main.h"
+#include "cleanup.h"
 
 static const GLfloat g_vertex_buffer_data[] = {
     -1.0f, -1.0f, 0.0f,
@@ -39,5 +40,10 @@ int run() {
     glfwSwapBuffers(window);
     glfwPollEvents();
     
-    return glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS && glfwWindowShouldClose(window) == 0;
+    // return glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS && glfwWindowShouldClose(window) == 0;
+
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE ) == GLFW_PRESS || glfwWindowShouldClose(window) != 0)
+        return 2;
+
+    return 1;
 }

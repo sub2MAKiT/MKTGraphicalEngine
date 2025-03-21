@@ -1,17 +1,23 @@
 #include "init.h"
 #include "main.h"
 #include "gen.h"
+#include "run.h"
+#include "cleanup.h"
 
 const char * tempVerShader = "#version 330 core\nlayout(location = 0) in vec3 vertexPosition_modelspace;\nvoid main(){\ngl_Position.xyz = vertexPosition_modelspace;\ngl_Position.w = 1.0;\n}";
 
 const char * tempFragShader = "#version 330 core\nout vec3 color;\nvoid main(){\n  color = vec3(1,0,0);\n}";
+
+GLFWwindow* window;
+
+GLuint shader;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }  
 
-void init() {
+int init() {
 
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -26,4 +32,9 @@ void init() {
 
 
     shader = genShaders(tempVerShader, tempFragShader);
+
+    return 1;
 }
+
+int (*x[3])() = {init,run,cleanup};
+int y = 0;
